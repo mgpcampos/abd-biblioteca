@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/style.css') }}">
+    <script src="{{ url_for('static',filename='js/script.js') }}"> </script>
+    <title>Sistema de Gerenciamento de Bibliotecas</title>
+</head>
+<body>
+    <h1>Sistema de Gerenciamento de Bibliotecas.</h1>
+    <h2>Livros disponíveis</h2>
+    <ul>
+        {% if books %}
+            {% for book in books %}
+                <li>{{ book.title }} by {{ book.author }}</li>
+            {% endfor %}
+        {% else %}
+            <li>Não há livros disponíveis.</li>
+        {% endif %}
+    </ul>
+    <div id="welcomeUser">
+        {% if username %}
+            <span>Olá, {{ username }}</span>
+            <a href="{{ url_for('logout') }}">Sair</a>
+        {% else %}
+            <a href="{{ url_for('login') }}">Entrar</a>
+        {% endif %}
+    </div>
+</body>
+</html>
