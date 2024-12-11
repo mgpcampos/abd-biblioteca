@@ -116,5 +116,5 @@ Essa entidade é a responsável por armazenar todas as reservas em que a data de
 
 # Desenvolvedores responsáveis
 
-| [<img loading="lazy" src="https://avatars.githubusercontent.com/u/111576177?v=4" width=115><br><sub>Gabriel de Paula Baroni</sub>](https://github.com/Gabriel-Baroni) |  [<img loading="lazy" src="https://avatars.githubusercontent.com/u/184117774?v=4" width=115><br><sub>Vinícius Ferreira Guimarães Maximo</sub>](https://github.com/vinimaxi) |  [<img loading="lazy" src="https://avatars.githubusercontent.com/u/184420136?v=4" width=115><br><sub>Renan Alexandre Morais de Souza</sub>](https://github.com/renan-alexandre-morais) |
+| [<img loading="lazy" src="" width=115><br><sub>Felipe Oliveira</sub>]() |  [<img loading="lazy" src="" width=115><br><sub>Mateus Gomes</sub>]() |  [<img loading="lazy" src="" width=115><br><sub>Ray Guilherme</sub>]() |
 | :---: | :---: | :---: |
