@@ -78,7 +78,7 @@ A aplicação de gerenciamento de livros e reservas em bibliotecas será uma fer
 <h1>Modelagem do Banco de Dados</h1>
 
 - `Elaborar nossa própria modelagem de banco de dados`
-<img src="blob:https://web.whatsapp.com/3cba9913-7219-48ea-b5a4-cb54616de87c" width=1000> 
+<img src="https://web.whatsapp.com/3cba9913-7219-48ea-b5a4-cb54616de87c" width=1000> 
 <img src="" width=1000> 
 
 <h1>Dicionário de Dados</h1>
