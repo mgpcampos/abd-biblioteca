@@ -52,7 +52,7 @@ A aplicação de gerenciamento de livros em bibliotecas será uma ferramenta int
 2. Faça login com seu e-mail e senha cadastrados.
 3. Acesse o painel administrativo para:
     - Cadastrar novos livros.
-    - Atualizar estoque de livro conforme for necessário.
+    - Atualizar os livros conforme for necessário.
 
 <h3>Usuário Comum:</h3>
 
