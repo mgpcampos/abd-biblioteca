@@ -4,7 +4,7 @@
 <p aling="center">
 
 
-<h1>👨‍🏫 Professores responsáveis</h1> 
+<h1> Professores responsáveis </h1> 
 
 -  Carlos Eduardo Duque Polito
 -  Olavo Olimpo de Matos Junior
@@ -12,7 +12,7 @@
 <h1>Introdução ao projeto</h1>
 
 <h2>Objetivo</h2>
-A aplicação é destinada ao gerenciamento de livros e reservas em bibliotecas. O principal objetivo é facilitar a interação entre usuários e bibliotecas, permitindo que os leitores busquem, reservem e gerenciem livros de maneira simples e intuitiva.
+A aplicação é destinada ao gerenciamento de livros em bibliotecas. O principal objetivo é facilitar a interação entre usuários e bibliotecas e o gerenciamento de livros de maneira simples.
 
 <h2>O que não é o objetivo do projeto</h2>
 
@@ -20,6 +20,7 @@ A integração com redes sociais para login ou o compartilhamento;
 A disponibilidade de recursos de avaliações ou comentários sobre os livros;
 Não haverá métodos de pagamento pois não é o objetivo do projeto arrecadar dinheiro;
 A escalabilidade. É um projeto pequeno e não queremos complica-lo.
+Não haverá reservas. Nosso site será usado mais para a averiguar os livros disponíveis na biblioteca local e sua popularidade. Se não haver mais o livro nós o removeremos.
 
 <h2>Público-alvo</h2>
 Todos que se interassam por livros. Seja para aquele que trabalha com isso ou para aquele que consome isso.
@@ -33,21 +34,15 @@ A aplicação será dividida em dois tipos de usuários: o administrador e o usu
 O grupo não é capaz de garantir que, em um primeiro momento, a aplicação irá apresentar um bom desempenho geral, uma segurança relevante e uma fácil escalabilidade.
 
 <h1>Funcionalidades do projeto</h2>
-A aplicação de gerenciamento de livros e reservas em bibliotecas será uma ferramenta intuitiva e prática, dividida entre dois tipos de usuários: administradores e usuários comuns.
+A aplicação de gerenciamento de livros em bibliotecas será uma ferramenta intuitiva e prática, dividida entre dois tipos de usuários: administradores e usuários comuns.
 
 <h3>Funcionalidades para o Administrador:</h3>
 
-- `Cadastro de livros`: possibilidade de inserir novos títulos, incluindo informações como nome, autor, gênero, quantidade disponível, entre outros.
-- `Gerenciamento de estoque`: controle dos exemplares disponíveis, permitindo atualizações conforme necessário.
-- `Vizualização de reserva`: acesso às reservas realizadas pelos usuários comuns, com a capacidade de acompanhar e gerenciar a situação de cada livro reservado.
+- `Cadastro de livros`: Possibilidade de inserir novos títulos, incluindo informações como nome, autor, gênero, quantidade disponível, entre outros.
 
 <h3>Funcionalidades para o Usuário Comum:</h3>
 
-- `Buscar livros`: pesquisa simplificada e intuitiva para localizar livros com base em critérios como título, autor ou gênero.
-- `Consulta por detalhes`: visualização de informações detalhadas sobre os livros disponíveis.
-- `Reserva de livros`: possibilidade de reservar exemplares pelo sistema.
-- `Histórico de reservas`: acesso ao histórico pessoal de reservas dos exemplares
-- `Avaliação de livros`: possibilidade de expressar sua opinão sobre o livro lido
+- `Consulta por detalhes`: Visualização de informações detalhadas sobre os livros disponíveis.
 
 <h1>Instruções para operar aplicação</h1>
 
@@ -57,33 +52,46 @@ A aplicação de gerenciamento de livros e reservas em bibliotecas será uma fer
 2. Faça login com seu e-mail e senha cadastrados.
 3. Acesse o painel administrativo para:
     - Cadastrar novos livros.
-    - Visualizar e gerenciar reservas feitas pelos usuários comuns.
     - Atualizar estoque de livro conforme for necessário.
 
 <h3>Usuário Comum:</h3>
 
 1. Acesse o sistema e crie uma conta como Usuário Comum (se ainda não tiver).
 2. Faça login com seu e-mail e senha cadastrados.
-3. Utilize a barra de busca para procurar livros disponíveis.
-4. Consulte os detalhes de um livro de seu interesse para verificar informações sobre ele.
-5. Reserve o livro desejado clicando na opção correspondente (caso disponível).
-6. Consulte o histórico de reservas no menu principal para acompanhar as suas interações com a biblioteca.
+3. Consulte os detalhes de um livro de seu interesse para verificar informações sobre ele.
+
 
 <h1>Matriz de Requisitos</h1>
-
-- `Elaborar nossa própria matriz de requisitos`
 
 <img src="https://github.com/user-attachments/assets/ce9936ef-0c1d-497c-9963-4213440f7146"> 
 
 <h1>Modelagem do Banco de Dados</h1>
 
-- `Elaborar nossa própria modelagem de banco de dados`
 <img src="https://github.com/user-attachments/assets/d92c13f3-df83-4f39-8058-c87b2a14353e"> 
 
 
 <h1>Dicionário de Dados</h1>
+Esse projeto contará com as seguintes Entidades e atributos
 
-- `Elaborar nosso próprio dicionário de dados`
+<h2>Entidade usuários</h2>
+ Essa entidade é necessária para cadastrar tanto o usuário comum quanto o administrador, possuindo os campos: id, nome, email, senha e ISadmin. 
+<br><br>
+ 
+- `idUsuário`: É um atributo do tipo INT. É o responsável por criar um **Id único** para o usuário, que no caso é o usuário comum ou o administrador (**CHAVE PRIMÁRIA**).
+- `ISadmin`: É um atributo do tipo BOOL. ISAdmin só armazena valores TRUE ou FALSE. Se no caso de um usuário A, o valor for TRUE, então esse usuário é um administrador. Se for false, é um usuário comum.
+- `nome`: É um atributo do tipo VARCHAR com um tamanho de 45 caracteres. É o responsável por armazenar o nome do usuário.
+- `senha`: É um atributo do tipo VARCHAR com um tamanho de 45 caracteres. É o responsável por armazenar a senha que o usuário cadastrou.
+
+<h2>Entidade books</h2>
+ Essa entidade é necessária para cadastrar todas as informações do livro registrado, possuindo os campos: id, título, autor, sinopse, capa, popularidade.
+ <br><br>
+
+`idBook`: É um atributo do tipo INT. É o responsável por criar um **Id único** para o livro registrado (**CHAVE PRIMÁRIA**).
+- `título `: É um atributo do tipo VARCHAR com um tamanho de 45 caracteres. É o responsável por armazenar o título do livro.
+- `autor`: É um atributo do tipo VARCHAR com um tamanho de 45 caracteres. É o responsável por armazenar o nome do autor.
+- `imagem_url`: É um atributo do tipo VARCHAR com um tamanho de 45 caracteres. É o responsável por armazenar a capa do livro.
+- `sinopse`: É um atributo do tipo VARCHAR com um tamanho de 45 caracteres. É o responsável por armazenar a sinopse do livro.
+- `popularidade ` É um atributo do tipo INT. Serve pra contagem de quantos clicks um livro recebeu. Por que o index mostra os livros de modo decrescente de acordo com a contagem de clicks.
 
 <h1>Tecnologias utilizadas</h1> 
 
