@@ -74,13 +74,13 @@ A aplicação de gerenciamento de livros e reservas em bibliotecas será uma fer
 - `Elaborar nossa própria matriz de requisitos`
 
 <img src="(https://github.com/user-attachments/assets/ce9936ef-0c1d-497c-9963-4213440f7146)
-" width=1000> 
+"> 
 
 <h1>Modelagem do Banco de Dados</h1>
 
 - `Elaborar nossa própria modelagem de banco de dados`
 <img src="(https://github.com/user-attachments/assets/d92c13f3-df83-4f39-8058-c87b2a14353e)
-" width=1000> 
+"> 
 
 
 <h1>Dicionário de Dados</h1>
