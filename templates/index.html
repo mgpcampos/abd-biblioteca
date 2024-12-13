@@ -3,28 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/index.css') }}">
-    <script src="{{ url_for('static',filename='js/script.js') }}"> </script>
-    <title>Sistema de Gerenciamento de Bibliotecas</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/style.css') }}">
+    <script src="{{ url_for('static',filename='js/script.js') }}"></script>
+    <title>Biblioteca Comunitária</title>
 </head>
 <body>
-    <h1>Sistema de Gerenciamento de Bibliotecas.</h1>
-    <h2>Livros disponíveis</h2>
-    <ul>
+    <h1>Biblioteca Comunitária</h1>
+    <div id="primeiroSegmento">
+        {% if username %}
+            <span>Olá, {{ username }}</span>
+            <a href="{{ url_for('logout') }}">Sair</a><br>
+        {% else %}
+            <a href="{{ url_for('login') }}">Entrar</a>
+        {% endif %}
+    </div><br>
+    <div id="segundoSegmento">
+        {% if is_admin %}
+            <a href="{{ url_for('add_book') }}">Adicionar livro</a><br><br>
+        {% endif %}
+    </div>
+    <div class="book-grid">
         {% if books %}
             {% for book in books %}
-                <li>{{ book.title }} by {{ book.author }}</li>
+            <div class="book-item">
+                <a href="{{ url_for('book_detail', book_id=book.id) }}">
+                    <img src="{{ book.image_url }}" alt="{{ book.title }}">
+                    <h3>{{ book.title }}</h3>
+                    <p>{{ book.author }}</p>
+                </a>
+            </div>
             {% endfor %}
         {% else %}
             <li>Não há livros disponíveis.</li>
-        {% endif %}
-    </ul>
-    <div id="welcomeUser">
-        {% if username %}
-            <span>Olá, {{ username }}</span>
-            <a href="{{ url_for('logout') }}">Sair</a>
-        {% else %}
-            <a href="{{ url_for('login') }}">Entrar</a>
         {% endif %}
     </div>
 </body>

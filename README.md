@@ -33,12 +33,41 @@ A aplicação será dividida em dois tipos de usuários: o administrador e o usu
 O grupo não é capaz de garantir que, em um primeiro momento, a aplicação irá apresentar um bom desempenho geral, uma segurança relevante e uma fácil escalabilidade.
 
 <h1>Funcionalidades do projeto</h2>
+A aplicação de gerenciamento de livros e reservas em bibliotecas será uma ferramenta intuitiva e prática, dividida entre dois tipos de usuários: administradores e usuários comuns.
 
-- `Desenvolver texto`
+<h3>Funcionalidades para o Administrador:</h3>
+
+- `Cadastro de livros`: possibilidade de inserir novos títulos, incluindo informações como nome, autor, gênero, quantidade disponível, entre outros.
+- `Gerenciamento de estoque`: controle dos exemplares disponíveis, permitindo atualizações conforme necessário.
+- `Vizualização de reserva`: acesso às reservas realizadas pelos usuários comuns, com a capacidade de acompanhar e gerenciar a situação de cada livro reservado.
+
+<h3>Funcionalidades para o Usuário Comum:</h3>
+
+- `Buscar livros`: pesquisa simplificada e intuitiva para localizar livros com base em critérios como título, autor ou gênero.
+- `Consulta por detalhes`: visualização de informações detalhadas sobre os livros disponíveis.
+- `Reserva de livros`: possibilidade de reservar exemplares pelo sistema.
+- `Histórico de reservas`: acesso ao histórico pessoal de reservas dos exemplares
+- `Avaliação de livros`: possibilidade de expressar sua opinão sobre o livro lido
 
 <h1>Instruções para operar aplicação</h1>
 
-- `Informar instruções`
+<h3>Administradores:</h3>
+
+1. Acesse o sistema e crie uma conta como administrador.
+2. Faça login com seu e-mail e senha cadastrados.
+3. Acesse o painel administrativo para:
+    - Cadastrar novos livros.
+    - Visualizar e gerenciar reservas feitas pelos usuários comuns.
+    - Atualizar estoque de livro conforme for necessário.
+
+<h3>Usuário Comum:</h3>
+
+1. Acesse o sistema e crie uma conta como Usuário Comum (se ainda não tiver).
+2. Faça login com seu e-mail e senha cadastrados.
+3. Utilize a barra de busca para procurar livros disponíveis.
+4. Consulte os detalhes de um livro de seu interesse para verificar informações sobre ele.
+5. Reserve o livro desejado clicando na opção correspondente (caso disponível).
+6. Consulte o histórico de reservas no menu principal para acompanhar as suas interações com a biblioteca.
 
 <h1>Matriz de Requisitos</h1>
 
@@ -116,5 +145,5 @@ Essa entidade é a responsável por armazenar todas as reservas em que a data de
 
 # Desenvolvedores responsáveis
 
-| [<img loading="lazy" src="" width=115><br><sub>Felipe Oliveira</sub>]() |  [<img loading="lazy" src="" width=115><br><sub>Mateus Gomes</sub>]() |  [<img loading="lazy" src="" width=115><br><sub>Ray Guilherme</sub>]() |
+| [<img loading="lazy" src="" width=115><br><sub>Felipe Oliveira</sub>]() |  [<img loading="lazy" src="" width=115><br><sub>Mateus Gomes</sub>]() |  [<img loading="lazy" src="" width=115><br><sub>Ray Guilherme</sub>]() |  
 | :---: | :---: | :---: |

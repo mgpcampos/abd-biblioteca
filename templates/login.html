@@ -3,43 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/login.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/style.css') }}">
     <script src="{{ url_for('static',filename='js/script.js') }}"> </script>
-    <title>Entrar - Sistema de Gerenciamento de Bibliotecas</title>
-    <style>
-        div{
-    background-color: rgb(0, 0, 0, 0.8);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 80px;
-    border-radius: 15px;
-    color: white
-        }
-        h1{
-            text-align:center;
-        }
-        a{
-            color:pink
-        }
-        a:hover{
-            color:rgb(238, 96, 214);
-        }
-
-    </style>
+    <title>Entrar</title>
 </head>
 <body>
-    <div>
-        <h1>Entre em sua conta</h1>
-        <form action="/login" method="post">
+    <h1>Entrar</h1>
+    <form action="/login" method="post">
         <label for="email">E-mail:</label>
         <input type="email" id="email" name="email" required><br><br>
+
         <label for="password">Senha:</label>
         <input type="password" id="password" name="password" required><br><br>
+
         <button type="submit">Login</button>
-        </form>
-        <p>Não possui uma conta? <a href="/register">Registre-se aqui</a></p>
-    </div>
+    </form>
+    <p>Não possui uma conta? <a href="/register">Registre uma aqui</a></p>
 </body>
 </html>

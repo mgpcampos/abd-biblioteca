@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/style.css') }}">
+    <script src="{{ url_for('static',filename='js/script.js') }}"></script>
+    <title>Adicionar livro</title>
+</head>
+<body>
+    <h1>Adicionar livro</h1>
+    <form action="/add_book" method="post" enctype="multipart/form-data">
+        <label for="title">Título do livro:</label>
+        <input type="text" id="title" name="title" required><br><br>
+
+        <label for="author">Autor do livro:</label>
+        <input type="text" id="author" name="author" required><br><br>
+
+        <label for="synopsis">Sinopse do livro:</label>
+        <textarea id="synopsis" name="synopsis" rows="6" cols="75"></textarea><br><br>
+
+        <label>Selecione o modo como deseja adicionar a imagem da capa:</label><br>
+        <input type="radio" id="url_option" name="image_option" value="url" checked onclick="showUrlInput()">
+        <label for="url_option">Inserir URL da imagem</label><br>
+        <input type="radio" id="upload_option" name="image_option" value="upload" onclick="showUploadInput()">
+        <label for="upload_option">Fazer upload da imagem</label><br><br>
+
+        <div id="url_input">
+            <label for="image_url">URL da imagem:</label>
+            <input type="text" id="image_url" name="image_url"><br><br>
+        </div>
+
+        <div id="upload_input" style="display: none;">
+            <label for="image_file">Arquivo da imagem:</label>
+            <input type="file" id="image_file" name="image_file" accept="image/*"><br><br>
+        </div>
+
+        <button type="submit">Adicionar</button>
+    </form>
+    <div id="primeiroSegmento">
+        <a href="{{ url_for('index') }}">Voltar</a>
+    </div>
+</body>
+</html>
