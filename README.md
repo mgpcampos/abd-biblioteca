@@ -44,7 +44,49 @@ A aplicação de gerenciamento de livros em bibliotecas será uma ferramenta int
 
 - `Consulta por detalhes`: Visualização de informações detalhadas sobre os livros disponíveis.
 
-<h1>Instruções para operar aplicação</h1>
+<h1>Instruções para operar a aplicação</h1>
+
+#### 1. Clonar o Repositório
+```bash
+git clone https://github.com/mgpcampos/abd-biblioteca
+```
+#### 2. Navegar até o Diretório do Projeto
+```bash
+cd abd-biblioteca
+```
+#### 3. Criar e Ativar um Ambiente Virtual
+```bash
+python -m venv .venv
+```
+#### • Windows
+```bash
+.venv\Scripts\activate
+```
+#### • Linux/macOS
+```bash
+source venv/bin/activate
+```
+#### 4. Instalar as Dependências
+```bash
+pip install -r requirements.txt
+```
+#### 5. Configurar Variáveis de Ambiente
+#### Crie um arquivo .env na raiz do projeto e adicione as seguintes linhas:
+```
+FLASK_SECRET_KEY=SuaChaveSecreta
+SUPABASE_URL=SuaURLdoSupabase
+SUPABASE_KEY=SuaChaveDoSupabase
+```
+#### 6. Executar a Aplicação
+```bash
+flask run
+```
+Para executar em modo de desenvolvimento com recarregamento automático, execute:
+```bash
+flask run --debug
+```
+Caso obtenha sucesso, acesse 127.0.0.1:5000/
+
 
 <h3>Administradores:</h3>
 
@@ -109,6 +151,6 @@ Esse projeto contará com as seguintes Entidades e atributos
 <br><br>
 <img src="https://img.shields.io/badge/supabase-%2300C4B7.svg?style=for-the-badge&logo=supabase&logoColor=white">
 
-<h1>🏗️ Arquitetura da Aplicação</h1> 
+<h1>Arquitetura da Aplicação</h1> 
 <h2>Arquitetura do Software</h2>
-<img src="https://github.com/user-attachments/assets/49e11b13-c231-4ae7-ae38-222c95d66f3e" width=1000> 
+<img src="https://github.com/user-attachments/assets/49e11b13-c231-4ae7-ae38-222c95d66f3e" width=1000>

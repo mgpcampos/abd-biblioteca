@@ -120,19 +120,39 @@ def add_book():
                 image = Image.open(io.BytesIO(response.content))
                 image = image.resize((300, 450))  # Redimensionar para a resolução desejada
 
-                # Salvar a imagem em um objeto BytesIO no formato original
+                # Determinar o formato da imagem
+                image_format = image.format
+                if not image_format:
+                    # Tentar inferir o formato a partir do Content-Type
+                    content_type = response.headers.get('Content-Type', '').lower()
+                    if 'jpeg' in content_type or 'jpg' in content_type:
+                        image_format = 'JPEG'
+                    elif 'png' in content_type:
+                        image_format = 'PNG'
+                    elif 'gif' in content_type:
+                        image_format = 'GIF'
+                    elif 'webp' in content_type:
+                        image_format = 'WEBP'
+                    else:
+                        # Definir como 'JPEG' se não for possível determinar o formato
+                        image_format = 'JPEG'
+
+                # Salvar a imagem em um objeto BytesIO no formato identificado
                 buffered = io.BytesIO()
-                image.save(buffered, format=image.format)
+                image.save(buffered, format=image_format)
                 buffered.seek(0)
 
+                # Gerar o nome do arquivo
+                file_extension = image_format.lower()
+                file_name = f"{title.replace(' ', '_')}.{file_extension}"
+
                 # Fazer upload da imagem para o Supabase Storage
-                file_name = f"{title.replace(' ', '_')}.{image.format.lower()}"
                 supabase.storage.from_('book-covers').upload(file_name, buffered.read())
 
                 # Obter a URL pública
                 image_url = supabase.storage.from_('book-covers').get_public_url(file_name)
             except Exception as e:
-                flash(f'Erro ao processar a imagem: {e}', 'danger')
+                print(f'Erro ao processar a imagem via URL: {e}')
                 return redirect(url_for('add_book'))
 
         elif image_option == 'upload':
@@ -156,7 +176,7 @@ def add_book():
                         # Obter a URL pública
                         image_url = supabase.storage.from_('book-covers').get_public_url(file_name)
                     except Exception as e:
-                        flash(f'Erro ao processar a imagem: {e}', 'danger')
+                        print(f'Erro ao processar a imagem via UPLOAD: {e}')
                         return redirect(url_for('add_book'))
                 else:
                     flash('Nenhum arquivo de imagem selecionado.', 'danger')
@@ -174,10 +194,10 @@ def add_book():
         }).execute()
 
         if response.data:
-            flash('Sucesso ao adicionar livro ao catálogo.', 'success')
+            flash('Sucesso ao adicionar livro.', 'success')
             return redirect(url_for('index'))
         else:
-            flash('Erro ao adicionar livro ao catálogo.', 'danger')
+            flash('Erro ao adicionar livro.', 'danger')
             return redirect(url_for('add_book'))
 
     return render_template('add_book.html')
